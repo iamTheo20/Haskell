@@ -1,3 +1,5 @@
+-- Project 1 --
+
 a = drop 3 "IntroToHaskell"
 
 squareArea :: Double -> Double
@@ -27,6 +29,31 @@ rhymes x y = last3 x == last3 y
 drJeep :: String -> String -> Bool
 drJeep x y =
   not (length x < length y) && drop (length x - length y) x == y
+
+
+
+-- Project 2 --
+
+import Data.List (nub)
+
+fx :: Integer -> Integer
+fx x
+  | x `mod`2 == 0 = x `div` 2
+  | x `mod` 2 /= 0  && (x `mod` 3 == 0) = x `div` 3
+  | otherwise = x - 1
+
+gx :: Integer -> Integer
+gx x = fx $ fx $ fx x
+
+amountOfUnique :: [Integer] -> Int
+amountOfUnique range = length(nub (map gx range))
+
+main = do 
+print(amountOfUnique [1..1000])
+
+
+
+
 
 
 
