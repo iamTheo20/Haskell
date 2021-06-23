@@ -1,0 +1,32 @@
+a = drop 3 "IntroToHaskell"
+
+squareArea :: Double -> Double
+squareArea x = x^2
+
+circleArea :: Double -> Double
+circleArea x = pi * x^2
+
+squareCircleArea :: Double -> Double
+squareCircleArea w = (4 * w^2) - (pi * w^2) 
+
+cathetus :: Double -> Double
+cathetus x = x / sqrt(2)
+
+circleSquareArea :: Double -> Double
+circleSquareArea w = (pi * w^2) - ((2 * w^2))
+
+last3 :: String -> String
+last3 x = drop (length x - 3) x
+
+rhymes :: String -> String -> Bool
+rhymes x y = last3 x == last3 y
+
+--jultomte
+--tomte
+
+drJeep :: String -> String -> Bool
+drJeep x y =
+  not (length x < length y) && drop (length x - length y) x == y
+
+
+
